@@ -1,0 +1,14 @@
+---
+title: home
+layout: base
+---
+
+Home Page!
+
+{% set postList = collections.posts | limit(3) %}
+
+{%- for post in postList %}
+    <h1><a href="{{ post.data.permalink }}">{{ post.data.title }}</a></h1>
+
+    {{ post.templateContent | safe }}
+{% endfor %}
